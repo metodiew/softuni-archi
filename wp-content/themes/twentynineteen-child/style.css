@@ -1,0 +1,11 @@
+/**
+ * Theme Name: Twenty Ninteen Child Theme
+ * Template:   twentynineteen
+ * Author: Stanko Metodiev
+ * Description: our first child theme
+ * ...other header fields
+ */
+
+body {
+    background-color: aliceblue;
+}
