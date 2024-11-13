@@ -92,37 +92,72 @@ function softuni_register_portfolio_category_taxonomy() {
 
 add_action( 'init', 'softuni_register_portfolio_category_taxonomy' );
 
+/**
+ * Explanation
+* Metabox Registration: The add_meta_box function creates a metabox for the your_custom_post_type post type.
+* Metabox Display: The callback function renders a text input field for entering "Custom Text."
+* Data Saving: The save_post action saves the text entered in the metabox when the post is saved.
+* Gutenberg Compatibility: Registering the meta field with show_in_rest => true makes it accessible in the REST API, which is useful for integrating with the block editor.
+* This setup ensures that your metabox is compatible with both the Classic Editor and Gutenberg. Let me know if you'd like to expand this with specific Gutenberg integrations or additional fields! 
+ */
 
 /**
- * Register meta box(es).
+ * Portfolio Metabox main function where we'll register metaboxes
+ *
+ * @return void
  */
-function portfiotion_register_meta_boxes_address() {
-	add_meta_box(
-        'portfotion-address',
-        __( 'Portfolio Address', 'softuni' ),
-        'softuni_portftfolio_address_callback',
-        'post'
+function portfolio_details_metabox() {
+    add_meta_box(
+        'portfolio_details_metabox_id',       	// Unique ID for the metabox
+        'Portfolio Details',                  	// Title of the metabox
+        'portfolio_details_metabox_callback', 	// Callback function that renders the metabox
+        'portfolio',        					// Post type where it will appear
+        'side',                         		// Context: where on the screen (side, normal, or advanced)
+        'default',                       		// Priority: default, high, low
+		array(
+			'__block_editor_compatible_meta_box' => true,
+			'__back_compat_meta_box'             => false,
+		)
     );
 }
-add_action( 'add_meta_boxes', 'portfiotion_register_meta_boxes_address' );
+add_action( 'add_meta_boxes', 'portfolio_details_metabox' );
 
-/**
- * Meta box display callback.
- *
- * @param WP_Post $post Current post object.
- */
-function softuni_portftfolio_address_callback( $post ) {
-	?>
-    <input name='address' id='address' class='portfolio-item' />
-    <?php
+
+function portfolio_details_metabox_callback( $post ) {
+    // Add a nonce field for security
+    wp_nonce_field( 'portfolio_details_metabox_nonce_action', 'portfolio_details_metabox_nonce' );
+
+    $portfolio_address = get_post_meta( $post->ID, 'portfolio_address', true );
+
+    echo '<label for="portfolio_address">Address: </label>';
+    echo '<input type="text" id="portfolio_address" name="portfolio_address" value="' . esc_attr( $portfolio_address ) . '" style="width: 100%;" />';
 }
 
-/**
- * Save meta box content.
- *
- * @param int $post_id Post ID
- */
-function wpdocs_save_meta_box( $post_id ) {
-	// Save logic goes here. Don't forget to include nonce checks!
+
+function your_custom_save_metabox( $post_id ) {
+    // Check for nonce security
+    if ( ! isset( $_POST['portfolio_details_metabox_nonce'] ) ||
+         ! wp_verify_nonce( $_POST['portfolio_details_metabox_nonce'], 'portfolio_details_metabox_nonce_action' ) ) {
+        return;
+    }
+
+    // Check for autosave or bulk edit
+    if ( defined( 'DOING_AUTOSAVE' ) && DOING_AUTOSAVE ) {
+        return;
+    }
+
+    // Check user permissions
+    if ( ! current_user_can( 'edit_post', $post_id ) ) {
+        return;
+    }
+
+	if ( isset( $_POST['_inline_edit'] ) ) {
+		return;
+	}
+
+    if ( isset( $_POST['portfolio_address'] ) ) {
+        update_post_meta( $post_id, 'portfolio_address', sanitize_text_field( $_POST['portfolio_address'] ) );
+    }
 }
-add_action( 'save_post', 'wpdocs_save_meta_box' );
+add_action( 'save_post', 'your_custom_save_metabox' );
+
