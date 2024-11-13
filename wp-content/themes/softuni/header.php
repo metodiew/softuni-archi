@@ -41,9 +41,17 @@
 					<div class="col-md-5">
 						<?php
 						// WordPress Menu
-
+						$nav_menu_args = array(
+							'menu'				=> 'primary-menu', // (int|string|WP_Term) Desired menu. Accepts a menu ID, slug, name, or object.
+							'menu_class'		=> 'nav__list d-none d-md-block', // (string) CSS class to use for the ul element which forms the menu. Default 'menu'.
+							'container'			=> 'ul', // (string) Whether to wrap the ul, and what to wrap it with. Default 'div'.
+							'container_class'	=> 'container-class', // (string) Class that is applied to the container. Default 'menu-{menu slug}-container'.
+							'theme_location'	=> 'primary', // (string) Theme location to be used. Must be registered with register_nav_menu() in order to be selectable by the user.
+						);
+						wp_nav_menu( $nav_menu_args );
 						?>
-						<ul class="nav__list d-none d-md-block">
+						
+						<!-- <ul class="nav__list d-none d-md-block">
 							<li class="nav__list-item active-nav"><a href="index.html" class="hover-target">Home</a>
 							</li>
 							<li class="nav__list-item"><a href="index.html" class="hover-target">Onepage Edit</a></li>
@@ -52,7 +60,7 @@
 							<li class="nav__list-item"><a href="single-post.html" class="hover-target">Single Post</a>
 							</li>
 							<li class="nav__list-item"><a href="contact.html" class="hover-target">Contact us</a></li>
-						</ul>
+						</ul> -->
 					</div>
 					<div class="col-md-4 text-white">
 						<h3 class="text-white fw-bold nav__block-item">Contact info</h3>
