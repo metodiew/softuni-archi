@@ -21,7 +21,7 @@
 							<?php while( have_posts() ) : the_post(); ?>
 								<div class="col-md-4">
 
-									<article class="post-item">
+								<article id="post-id-<?php the_ID(); ?>" <?php post_class( 'post-item' ) ?>>
 
 										<?php if ( has_post_thumbnail() ) : ?>
 											<figure>

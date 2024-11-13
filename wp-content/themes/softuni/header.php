@@ -29,19 +29,24 @@
     <?php wp_head(); ?>
 </head>
 
-<body>
+<body <?php body_class( 'another-test-class' ); ?>>
 
 	<div class="preloader"></div>
 
+	<?php // @TODO: Create WordPress Native menu ?>
 	<div class="nav nav-overlay">
 		<div class="nav__content">
 			<div class="container">
 				<div class="row p-4 p-md-0 flex-column-reverse flex-md-row g-md-5 nav__block">
 					<div class="col-md-5">
+						<?php
+						// WordPress Menu
+
+						?>
 						<ul class="nav__list d-none d-md-block">
 							<li class="nav__list-item active-nav"><a href="index.html" class="hover-target">Home</a>
 							</li>
-							<li class="nav__list-item"><a href="index.html" class="hover-target">Onepage</a></li>
+							<li class="nav__list-item"><a href="index.html" class="hover-target">Onepage Edit</a></li>
 							<li class="nav__list-item"><a href="index.html" class="hover-target">Styles</a></li>
 							<li class="nav__list-item"><a href="index.html" class="hover-target">Blog</a></li>
 							<li class="nav__list-item"><a href="single-post.html" class="hover-target">Single Post</a>
@@ -107,7 +112,7 @@
 	<?php
 	// @TODO: Move this to a page template or template part
 	?>
-	<?php if ( ! is_singular() ) : ?>
+	<?php if ( is_front_page() ) : ?>
 		<section id="intro" class="scrollspy-section">
 			<div class="main-slider">
 				<div class="slider-item jarallax" data-speed="0.2">

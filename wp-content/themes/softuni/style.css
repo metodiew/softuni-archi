@@ -3093,3 +3093,12 @@ footer#footer {
 .parallax-wrap .parallax-image {
   position: absolute;
 }
+
+/* Stanko's Test */
+.single-portfolio h2 {
+  color: red;
+}
+
+.author #post-id-37 {
+  background: yellow;
+}
