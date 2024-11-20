@@ -12,11 +12,13 @@
 * Update our plugin structure
 * Theme vs Plugin functionality - done
 * Q&A
-* Deploy the code to GitHub
+* Deploy the code to GitHub - done
 * i18n functions
 
 * 2nd sessions
 * ADd some custom taxonomy meta data
+* add metabox functions
+* Homepage slider to be CPT + template part
 */
 
 if ( ! defined( 'SOFTUNI_PLUGIN_VERSION' ) ) {
@@ -29,3 +31,4 @@ if ( ! defined( 'SOFTUNI_PLUGIN_ASSETS_URL' ) ) {
 
 require 'includes/cpt-portfolio.php';
 require 'includes/cpt-testimonial.php';
+require 'includes/functions.php';
