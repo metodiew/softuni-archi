@@ -1,5 +1,9 @@
 <?php
 
+if ( ! defined( 'SOFTUNI_THEME_VER' ) ) {
+	define( 'SOFTUNI_THEME_VER', '1.0.5' );
+}
+
 add_theme_support( 'title-tag' );
 add_theme_support( 'post-thumbnails' );
 
@@ -7,10 +11,12 @@ add_post_type_support( 'excerpt', array() );
 
 add_action( 'wp_enqueue_scripts', 'softuni_enqueue_assets' );
 function softuni_enqueue_assets() {
-    wp_enqueue_style( 'softuni-main-style', get_stylesheet_directory_uri() . '/style.css', array(), '1.0.0' );
 
-	// wp_enqueue_script();
+	wp_enqueue_style( 'softuni-main-style', get_stylesheet_directory_uri() . '/css/style.css', array(), SOFTUNI_THEME_VER );
+	wp_enqueue_script( 'plugins-js', get_stylesheet_directory_uri() . '/js/plugins.js', array( 'jquery' ), SOFTUNI_THEME_VER, array( 'in_footer' => true ) );
+	wp_enqueue_script( 'script', get_stylesheet_directory_uri() . '/js/script.js', array( 'jquery' ), SOFTUNI_THEME_VER, array( 'in_footer' => true ) );
 }
+
 
 
 function softuni_display_latest_posts( $number_of_posts = 3 ) {
