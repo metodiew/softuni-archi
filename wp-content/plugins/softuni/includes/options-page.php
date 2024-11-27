@@ -99,10 +99,6 @@ function softuni_custom_options_page_callback() {
         <form action="options.php" method="post">
             <?php
 
-            // @TODO: remove the var_dump
-            $softuni_options = get_option( 'softuni_custom_options' );
-            var_dump( $softuni_options );
-
             // Output nonce, action, and option page fields for the settings page
             settings_fields( 'softuni_custom_options_group' );
 
