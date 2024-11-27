@@ -1,5 +1,9 @@
 <?php get_header(); ?>
 
+<?php
+// Use a custom query or use pre_get_posts
+?>
+
 <section id="latest-blog" class="scrollspy-section bg-grey padding-large">
 	<div class="container">
 

@@ -6,9 +6,16 @@
 
 <?php
 $about_us_fields = get_fields( get_the_ID() );
+$softuni_options = get_option( 'softuni_custom_options' );
 ?>
 
 <?php get_header(); ?>
+
+<?php
+if ( ! empty( $softuni_options['softuni_homepage_slider'] ) && true == $softuni_options['softuni_homepage_slider'] ) {
+    get_template_part( 'partials/slider' );
+}
+?>
 
 <?php get_template_part( 'partials/about', 'section', $about_us_fields ); ?>
 

@@ -23,18 +23,18 @@ function softuni_plugin_settings_init() {
 
     // Add a field for the text input
     add_settings_field(
-        'softuni_plugin_text_field', // Field ID
+        'softunit_category_posts_per_page', // Field ID
         __( 'Number of posts for the category archive', 'softuni' ), // Label for the field
-        'softuni_plugin_text_field_callback', // Callback function for rendering the field
+        'softunit_category_posts_per_page_callback', // Callback function for rendering the field
         'softuni_custom_options', // Page where the field will be displayed
         'custom_plugin_main_section' // Section where the field belongs
     );
 
     // Add a checkbox field
     add_settings_field(
-        'custom_plugin_checkbox_field', // Field ID
-        __( 'Enable Feature', 'softuni' ), // Label for the checkbox
-        'custom_plugin_checkbox_field_callback', // Callback function for rendering the checkbox
+        'softuni_homepage_slider', // Field ID
+        __( 'Enable Homepage Slider', 'softuni' ), // Label for the checkbox
+        'softuni_homepage_slider_callback', // Callback function for rendering the checkbox
         'softuni_custom_options', // Page where the checkbox will be displayed
         'custom_plugin_main_section' // Section where the checkbox belongs
     );
@@ -50,12 +50,12 @@ function softuni_plugin_section_callback() {
 /**
  * Callback function for rendering the text field.
  */
-function softuni_plugin_text_field_callback() {
+function softunit_category_posts_per_page_callback() {
     // Retrieve the existing value from the database
     $options = get_option( 'softuni_custom_options' );
-    $value   = isset( $options['softuni_plugin_text_field'] ) ? esc_attr( $options['softuni_plugin_text_field'] ) : '';
+    $value   = isset( $options['softunit_category_posts_per_page'] ) ? esc_attr( $options['softunit_category_posts_per_page'] ) : '';
     ?>
-    <input type="text" name="softuni_custom_options[softuni_plugin_text_field]" value="<?php echo $value; ?>" />
+    <input type="text" name="softuni_custom_options[softunit_category_posts_per_page]" value="<?php echo $value; ?>" />
     <p class="description"><?php esc_html_e( 'Set a number of posts per page for the cagegory achive.', 'softuni' ); ?></p>
     <?php
 }
@@ -63,12 +63,12 @@ function softuni_plugin_text_field_callback() {
 /**
  * Callback function for rendering the checkbox field.
  */
-function custom_plugin_checkbox_field_callback() {
+function softuni_homepage_slider_callback() {
     // Retrieve the existing value from the database
     $options = get_option( 'softuni_custom_options' );
-    $checked = isset( $options['custom_plugin_checkbox_field'] ) && $options['custom_plugin_checkbox_field'] ? 'checked' : '';
+    $checked = isset( $options['softuni_homepage_slider'] ) && $options['softuni_homepage_slider'] ? 'checked' : '';
     ?>
-    <input type="checkbox" name="softuni_custom_options[custom_plugin_checkbox_field]" value="1" <?php echo $checked; ?> />
+    <input type="checkbox" name="softuni_custom_options[softuni_homepage_slider]" value="1" <?php echo $checked; ?> />
     <p class="description"><?php esc_html_e( 'Check to enable the feature.', 'softuni' ); ?></p>
     <?php
 }
@@ -99,6 +99,7 @@ function softuni_custom_options_page_callback() {
         <form action="options.php" method="post">
             <?php
 
+            // @TODO: remove the var_dump
             $softuni_options = get_option( 'softuni_custom_options' );
             var_dump( $softuni_options );
 

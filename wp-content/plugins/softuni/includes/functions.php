@@ -82,3 +82,18 @@ function display_portfolio_title( $atts ) {
 add_shortcode( 'display_portfolio_title', 'display_portfolio_title' );
 
 
+/**
+ * A custom function that filter our custom category archive
+ *
+ * @return void
+ */
+function softuni_theme_category_archive_query( $query ) {
+    $softuni_options = get_option( 'softuni_custom_options' );
+
+    if ( ! is_admin() && $query->is_main_query() && is_category() ) {
+        if ( ! empty( $softuni_options['softunit_category_posts_per_page'] ) ) {
+            $query->set( 'posts_per_page', esc_attr( $softuni_options['softunit_category_posts_per_page'] ) );
+        }
+    }
+}
+add_action( 'pre_get_posts', 'softuni_theme_category_archive_query' );
