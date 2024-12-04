@@ -9,8 +9,8 @@
   <meta name="keywords" content="">
 
   <!-- Favicons -->
-  <link href="assets/img/favicon.png" rel="icon">
-  <link href="assets/img/apple-touch-icon.png" rel="apple-touch-icon">
+  <link href="<?php echo get_stylesheet_directory_uri(); ?>/assets/img/favicon.png" rel="icon">
+  <link href="<?php echo get_stylesheet_directory_uri(); ?>/assets/img/apple-touch-icon.png" rel="apple-touch-icon">
 
   <!-- Fonts -->
   <link href="https://fonts.googleapis.com" rel="preconnect">
@@ -18,14 +18,14 @@
   <link href="https://fonts.googleapis.com/css2?family=Roboto:ital,wght@0,100;0,300;0,400;0,500;0,700;0,900;1,100;1,300;1,400;1,500;1,700;1,900&family=Montserrat:ital,wght@0,100;0,200;0,300;0,400;0,500;0,600;0,700;0,800;0,900;1,100;1,200;1,300;1,400;1,500;1,600;1,700;1,800;1,900&family=Raleway:ital,wght@0,100;0,200;0,300;0,400;0,500;0,600;0,700;0,800;0,900;1,100;1,200;1,300;1,400;1,500;1,600;1,700;1,800;1,900&display=swap" rel="stylesheet">
 
   <!-- Vendor CSS Files -->
-  <link href="assets/vendor/bootstrap/css/bootstrap.min.css" rel="stylesheet">
-  <link href="assets/vendor/bootstrap-icons/bootstrap-icons.css" rel="stylesheet">
-  <link href="assets/vendor/aos/aos.css" rel="stylesheet">
-  <link href="assets/vendor/glightbox/css/glightbox.min.css" rel="stylesheet">
-  <link href="assets/vendor/swiper/swiper-bundle.min.css" rel="stylesheet">
+  <link href="<?php echo get_stylesheet_directory_uri(); ?>/assets/vendor/bootstrap/css/bootstrap.min.css" rel="stylesheet">
+  <link href="<?php echo get_stylesheet_directory_uri(); ?>/assets/vendor/bootstrap-icons/bootstrap-icons.css" rel="stylesheet">
+  <link href="<?php echo get_stylesheet_directory_uri(); ?>/assets/vendor/aos/aos.css" rel="stylesheet">
+  <link href="<?php echo get_stylesheet_directory_uri(); ?>/assets/vendor/glightbox/css/glightbox.min.css" rel="stylesheet">
+  <link href="<?php echo get_stylesheet_directory_uri(); ?>/assets/vendor/swiper/swiper-bundle.min.css" rel="stylesheet">
 
   <!-- Main CSS File -->
-  <link href="assets/css/main.css" rel="stylesheet">
+  <link href="<?php echo get_stylesheet_directory_uri(); ?>/assets/css/main.css" rel="stylesheet">
 
   <!-- =======================================================
   * Template Name: Nova
@@ -43,7 +43,7 @@
 
       <a href="index.html" class="logo d-flex align-items-center">
         <!-- Uncomment the line below if you also wish to use an image logo -->
-        <!-- <img src="assets/img/logo.png" alt=""> -->
+        <!-- <img src="<?php echo get_stylesheet_directory_uri(); ?>/assets/img/logo.png" alt=""> -->
         <h1 class="sitename">Nova</h1>
       </a>
 
@@ -85,7 +85,7 @@
     <!-- Hero Section -->
     <section id="hero" class="hero section dark-background">
 
-      <img src="assets/img/hero-bg.jpg" alt="" data-aos="fade-in">
+      <img src="<?php echo get_stylesheet_directory_uri(); ?>/assets/img/hero-bg.jpg" alt="" data-aos="fade-in">
 
       <div class="container">
         <div class="row">
@@ -112,7 +112,7 @@
         <div class="row g-0">
 
           <div class="col-xl-5 img-bg" data-aos="fade-up" data-aos-delay="100">
-            <img src="assets/img/why-us-bg.jpg" alt="">
+            <img src="<?php echo get_stylesheet_directory_uri(); ?>/assets/img/why-us-bg.jpg" alt="">
           </div>
 
           <div class="col-xl-7 slides position-relative" data-aos="fade-up" data-aos-delay="200">
@@ -263,7 +263,7 @@
     <!-- Call To Action Section -->
     <section id="call-to-action" class="call-to-action section dark-background">
 
-      <img src="assets/img/cta-bg.jpg" alt="">
+      <img src="<?php echo get_stylesheet_directory_uri(); ?>/assets/img/cta-bg.jpg" alt="">
 
       <div class="container">
         <div class="row justify-content-center" data-aos="zoom-in" data-aos-delay="100">
@@ -349,7 +349,7 @@
           </div>
           <div class="col-lg-5 position-relative" data-aos="zoom-out" data-aos-delay="200">
             <div class="phone-wrap">
-              <img src="assets/img/iphone.png" alt="Image" class="img-fluid">
+              <img src="<?php echo get_stylesheet_directory_uri(); ?>/assets/img/iphone.png" alt="Image" class="img-fluid">
             </div>
           </div>
         </div>
@@ -385,7 +385,7 @@
 
           <div class="col-xl-3 col-md-6" data-aos="fade-up" data-aos-delay="200">
             <div class="post-box">
-              <div class="post-img"><img src="assets/img/blog/blog-1.jpg" class="img-fluid" alt=""></div>
+              <div class="post-img"><img src="<?php echo get_stylesheet_directory_uri(); ?>/assets/img/blog/blog-1.jpg" class="img-fluid" alt=""></div>
               <div class="meta">
                 <span class="post-date">Tue, December 12</span>
                 <span class="post-author"> / Julia Parker</span>
@@ -398,7 +398,7 @@
 
           <div class="col-xl-3 col-md-6" data-aos="fade-up" data-aos-delay="400">
             <div class="post-box">
-              <div class="post-img"><img src="assets/img/blog/blog-2.jpg" class="img-fluid" alt=""></div>
+              <div class="post-img"><img src="<?php echo get_stylesheet_directory_uri(); ?>/assets/img/blog/blog-2.jpg" class="img-fluid" alt=""></div>
               <div class="meta">
                 <span class="post-date">Fri, September 05</span>
                 <span class="post-author"> / Mario Douglas</span>
@@ -411,7 +411,7 @@
 
           <div class="col-xl-3 col-md-6" data-aos="fade-up" data-aos-delay="600">
             <div class="post-box">
-              <div class="post-img"><img src="assets/img/blog/blog-3.jpg" class="img-fluid" alt=""></div>
+              <div class="post-img"><img src="<?php echo get_stylesheet_directory_uri(); ?>/assets/img/blog/blog-3.jpg" class="img-fluid" alt=""></div>
               <div class="meta">
                 <span class="post-date">Tue, July 27</span>
                 <span class="post-author"> / Lisa Hunter</span>
@@ -424,7 +424,7 @@
 
           <div class="col-xl-3 col-md-6" data-aos="fade-up" data-aos-delay="600">
             <div class="post-box">
-              <div class="post-img"><img src="assets/img/blog/blog-4.jpg" class="img-fluid" alt=""></div>
+              <div class="post-img"><img src="<?php echo get_stylesheet_directory_uri(); ?>/assets/img/blog/blog-4.jpg" class="img-fluid" alt=""></div>
               <div class="meta">
                 <span class="post-date">Tue, Sep 16</span>
                 <span class="post-author"> / Mario Douglas</span>
@@ -516,16 +516,16 @@
   <div id="preloader"></div>
 
   <!-- Vendor JS Files -->
-  <script src="assets/vendor/bootstrap/js/bootstrap.bundle.min.js"></script>
-  <script src="assets/vendor/php-email-form/validate.js"></script>
-  <script src="assets/vendor/aos/aos.js"></script>
-  <script src="assets/vendor/glightbox/js/glightbox.min.js"></script>
-  <script src="assets/vendor/swiper/swiper-bundle.min.js"></script>
-  <script src="assets/vendor/imagesloaded/imagesloaded.pkgd.min.js"></script>
-  <script src="assets/vendor/isotope-layout/isotope.pkgd.min.js"></script>
+  <script src="<?php echo get_stylesheet_directory_uri(); ?>/assets/vendor/bootstrap/js/bootstrap.bundle.min.js"></script>
+  <script src="<?php echo get_stylesheet_directory_uri(); ?>/assets/vendor/php-email-form/validate.js"></script>
+  <script src="<?php echo get_stylesheet_directory_uri(); ?>/assets/vendor/aos/aos.js"></script>
+  <script src="<?php echo get_stylesheet_directory_uri(); ?>/assets/vendor/glightbox/js/glightbox.min.js"></script>
+  <script src="<?php echo get_stylesheet_directory_uri(); ?>/assets/vendor/swiper/swiper-bundle.min.js"></script>
+  <script src="<?php echo get_stylesheet_directory_uri(); ?>/assets/vendor/imagesloaded/imagesloaded.pkgd.min.js"></script>
+  <script src="<?php echo get_stylesheet_directory_uri(); ?>/assets/vendor/isotope-layout/isotope.pkgd.min.js"></script>
 
   <!-- Main JS File -->
-  <script src="assets/js/main.js"></script>
+  <script src="<?php echo get_stylesheet_directory_uri(); ?>/assets/js/main.js"></script>
 
 </body>
 
