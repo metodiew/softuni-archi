@@ -25,6 +25,8 @@ function softuni_enqueue_assets() {
     // Load all JavaScript files
     wp_enqueue_script( 'plugins-js', get_stylesheet_directory_uri() . '/js/plugins.js', array( 'jquery' ), SOFTUNI_NOVA_VER, array( 'in_footer' => true ) );
 	wp_enqueue_script( 'script', get_stylesheet_directory_uri() . '/js/script.js', array( 'jquery' ), SOFTUNI_NOVA_VER, array( 'in_footer' => true ) );
+
+    // @TODO: move the footer.js scripts here
 }
 
 /**
